@@ -1,0 +1,36 @@
+{% include('navbar.twig') %}
+<main>
+    <div class="wrapper">
+        <h1>Edit Profile</h1>
+        <div class="info">
+            <div class="entry first-name-box">
+                <span class="label">First Name</span>
+                <input id="firstName" type="text" placeholder="First Name">
+            </div>
+            <div class="entry last-name-box">
+                <span class="label">Last Name</span>
+                <input id="lastName" type="text" placeholder="Last Name">
+            </div>
+            <div class="entry email-box">
+                <span class="label">Email</span>
+                <input id="email" type="text" placeholder="Email">
+            </div>
+            <div class="entry picture-box">
+                <span class="label">Profile Picture</span>
+                <input id="picture-url" type="text" placeholder="Picture URL">
+            </div>
+            <div class="entry biography-box">
+                <span class="label">Biography</span>
+                <textarea id="biography" placeholder="Biography"></textarea>
+            </div>
+            <div class="entry languages-box">
+                <span class="label">Spoken Languages</span>
+                <select id="add-language">
+                    <option disabled selected>Add a Language</option>
+                </select>
+                <div id="spoken-languages"></div>
+            </div>
+        </div>
+        <button id="saveChanges">Save</button>
+    </div>
+</main>

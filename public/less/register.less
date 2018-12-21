@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+@light-color: #F9F5F6;
+@middle-color: #EBEBEB;
+@dark-color: #F74242;
+@darker-color: #2E2E2E;
+@dark-text-color: #2E2E2E;
+@light-text-color: #F9F5F6;
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.2ch;
+    border-radius: 0;
+}
+
+main {
+    display: flex;
+    height: 100vh;
+    background-color: @middle-color;
+}
+
+.left {
+    height: 100%;
+    width: 50%;
+    flex: 1;
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: @dark-color;
+    position: absolute;
+    right: -150%;
+    transition: 1000ms;
+    &.show {
+        right: 50%;
+    }
+    h1 {
+        font-size: 4em;
+        color: @light-text-color;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    span {
+        font-size: 1.5em;
+        color: @light-text-color;
+        margin-bottom: 135px;
+        text-align: center;
+    }
+    .login-btn {
+        color: @light-text-color;
+        padding: 10px 20px;
+        font-size: 1.5em;
+        text-decoration: none;
+        border: 5px solid @light-color;
+        border-radius: 30px 30px;
+        transition: 200ms;
+        &:hover {
+            background-color: @light-color;
+            color: @dark-text-color;
+        }
+    }
+}
+
+.right {
+    height: 100%;
+    width: 50%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    flex-basis: 50%;
+    padding-bottom: 90px;
+    background-color: @light-color;
+    position: absolute;
+    right: -100%;
+    transition: 500ms;
+    &.show {
+        right: 0;
+    }
+    input {
+        border-bottom: 1px solid @dark-color;
+        font-size: 1.5em;
+        background-color: @light-color;
+        padding: 0 10px;
+        margin-bottom: 25px;
+        text-align: center;
+        width: 400px;
+        transition: background-color 300ms, color 300ms;
+        &:focus {
+            outline: none;
+        }
+        &.invalid {
+            background-color: @dark-color;
+            color: @light-color;
+            &::placeholder {
+                color: @light-color;
+            }
+        }
+        &:-webkit-autofill {
+            box-shadow: 0 0 0px 1000px @light-color inset;
+        }
+    }
+    #username {
+        margin-bottom: 0;
+    }
+    #used-username {
+        width: 400px;
+        transform: scaleY(0);
+        background-color: @dark-color;
+        color: @light-color;
+        transition: 300ms;
+        text-align: center;
+        &.used {
+            transform: scaleY(1);
+            margin-bottom: 25px;
+        }
+    }
+    #register-btn {
+        flex-shrink: 0;
+        background-color: @light-color;
+        color: @dark-color;
+        border: 5px solid @dark-color;
+        border-radius: 30px;
+        padding: 10px 20px;
+        margin-top: 25px;
+        font-size: 1.5em;
+        transition: 200ms;
+        &:hover {
+            cursor: pointer;
+            background-color: @dark-color;
+            color: @light-color;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+
+@media screen and (max-width: 780px) {
+    html, body {
+        background-color: @light-color;
+    }
+    main {
+        flex-direction: column;
+        height: 100%;
+    }
+    .right, .left, .right.show, .left.show {
+        transition: none;
+        position: initial;
+        width: 100%;
+        left: 0;
+    }
+    .right {
+        padding: 10px 0;
+        input {
+            padding: 0;
+            width: 90%;
+        }
+        #register-btn {
+            margin-top: 10px;
+        }
+    }
+
+    .left {
+        flex: 0.5;
+        >span {
+            display: none;
+        }
+        >h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        .login-btn {
+            position: absolute;
+            bottom: 5%;
+            border-color: @dark-color;
+            color: @dark-color;
+            z-index: 2;
+            &:hover {
+                background-color: @dark-color;
+                color: @light-color;
+            }
+        }
+    }
+}

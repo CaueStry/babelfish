@@ -1,0 +1,22 @@
+{% include('navbar.twig') %}
+<main>
+    <div class="heading">
+        <img src="#" alt="" id="openprofile-img" class="openprofile-img">
+        <div class="info-box">
+            <div class="name" id="name"></div>
+            <div class="username" id="username"></div>
+        </div>
+    </div>
+    <div class="details">
+        <div>
+            <h2>Spoken Languages</h2>
+            <ul id="spoken-languages" class="spoken-languages"></ul>
+        </div>
+        <div>
+            <h2>Biography</h2>
+            <div id="biography" class="biography"></div>
+        </div>
+    </div>
+    <a id="edit" class="hidden" href="/profile/edit">Edit Profile</a>
+    <a id="message" class="hidden">Chat!</a>
+</main>
