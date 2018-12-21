@@ -44,13 +44,13 @@ Babel Fish was built as a project for the course CPSC2030 at Langara College.
 ```
 
 * Setup the database
-// For root
+> For root
 ```sh
 npm run setupdb
 # Type your root password
 ```
 
-// For another account
+> For another account
 ```sh
 mysql < ./config/setup.sql -u [username] -p
 # Type your account password
