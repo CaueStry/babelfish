@@ -1,5 +1,4 @@
 # Babel Fish
-https://chatbabelfish.com/
 
 Babel Fish is a social network built around helping language students connect and share their knowledge.
 
